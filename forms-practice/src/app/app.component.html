@@ -1,0 +1,39 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name"
+        >Name:
+        <input type="text" formControlName="name" />
+      </label>
+      <br />
+      <br />
+      <label for="email"
+        >Email:
+        <input type="text" formControlName="email" />
+      </label>
+    </div>
+    <br />
+    <div>
+      <label for=""
+        >Project Status:
+        <select formControlName="status">
+          <option
+            value="Stable">Stable</option>
+            <option
+            value="Critical">Critical</option>
+            <option
+            value="Finished">Finished</option>
+        </select>
+      </label>
+    </div>
+    <br />
+    <button type="submit">Submit</button>
+  </form>
+  <hr>
+  <br>
+  <div *ngIf="submitted">
+    <p>Entered Name: {{inputData.name}}</p>
+    <p>Entered Email: {{inputData.email}}</p>
+    <p>Entered Status: {{inputData.status}}</p>
+  </div>
+</div>
